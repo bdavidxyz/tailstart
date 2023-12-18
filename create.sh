@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "Hello World..."
 
 mkdir authy && cd authy 
 echo "source 'https://rubygems.org'" > Gemfile
