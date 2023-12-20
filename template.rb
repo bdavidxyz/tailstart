@@ -31,20 +31,29 @@ add_gems
 ########################################
 after_bundle do
   rails_command "db:create"
-  rails_command "generate authentication"
+  generate "authentication"
   rails_command "db:migrate"
 
   copy_file "files/app/views/sessions/new.html.erb", "app/views/sessions/new.html.erb", force: true
   copy_file "files/tailwind.config.js", "tailwind.config.js", force: true
+
 
   git :init
   git add: "."
   git commit: %Q{ -m 'Initial commit' }
 
   say "============================================================="
-  say ""
-  say "💡 Done! ✨", :yellow
+  say
+  say "App successfully created! 🎉🎉🎉", :green
+  say
+  say "Switch to your app by running:"
+  say "$ cd #{app_name}", :yellow
+  say
+  say "Then run:"
+  say "bin/dev", :yellow
+  say
+  say "Then open:"
+  say "http://localhost:3000", :yellow
   say ""
   say "============================================================="
-
 end
