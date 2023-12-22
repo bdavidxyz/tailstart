@@ -1,8 +1,25 @@
-README.md
+# Flowbite and Ruby-on-Rails starter kit
 
-rails --version
+## Prerequisites
+
+Tested under Linux-based system.
+
 ruby --version
-git --version
-node --version
-psql --version
+3.2.2
 
+git --version
+2.34.1
+
+node --version
+v20.9.0
+
+psql --version
+14.10
+
+## Build
+
+> chmod +x ./create.sh
+
+## Drop all
+
+> chmod +x ./create.sh
