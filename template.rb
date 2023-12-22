@@ -35,7 +35,10 @@ after_bundle do
   rails_command "db:migrate"
 
   directory "files/app", "app", force: true
+  directory "files/db", "db", force: true
   copy_file "files/tailwind.config.js", "tailwind.config.js", force: true
+
+  rails_command "db:seed"
 
   git :init
   git add: "."
@@ -53,6 +56,8 @@ after_bundle do
   say
   say "Then open:"
   say "http://localhost:3000", :yellow
+  say
+  say "Database is already filled with default values of db/seeds.rb. Enjoy!"
   say ""
   say "============================================================="
 end
