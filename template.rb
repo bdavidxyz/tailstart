@@ -34,9 +34,8 @@ after_bundle do
   generate "authentication"
   rails_command "db:migrate"
 
-  copy_file "files/app/views/sessions/new.html.erb", "app/views/sessions/new.html.erb", force: true
+  directory "files/app", "app", force: true
   copy_file "files/tailwind.config.js", "tailwind.config.js", force: true
-
 
   git :init
   git add: "."
