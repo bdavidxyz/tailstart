@@ -1,0 +1,35 @@
+<%= turbo_stream.prepend "flash", partial: "shared/flash" %>
+<% focus = nil %>
+<%= turbo_stream.log("log from turbo stream") %>
+<%# email field %>
+<% if errors.to_h[:email].try(:[], 0) %>
+  <%= turbo_stream.replace_all_classes_by(  'label[for="registration_email"]', 'block mb-2 text-sm font-medium text-red-700 dark:text-red-500') %>
+  <%= turbo_stream.replace_all_classes_by('input#registration_email', 'bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-red-100 dark:border-red-400') %>
+  <% if !focus %>
+    <%= turbo_stream.focus('input#registration_email') %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace_all_classes_by('label[for="registration_email"]', 'block mb-2 text-sm font-medium text-gray-900 dark:text-white') %>
+  <%= turbo_stream.replace_all_classes_by('input#registration_email', 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500') %>
+<% end %>
+<%# password field %>
+<% if errors.to_h[:password].try(:[], 0) %>
+  <%= turbo_stream.replace_all_classes_by('label[for="registration_password"]', 'block mb-2 text-sm font-medium text-red-700 dark:text-red-500') %>
+  <%= turbo_stream.replace_all_classes_by('input#registration_password', 'bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-red-100 dark:border-red-400') %>
+  <% if !focus %>
+    <%= turbo_stream.focus('input#registration_password') %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace_all_classes_by('label[for="registration_password"]', 'block mb-2 text-sm font-medium text-gray-900 dark:text-white') %>
+  <%= turbo_stream.replace_all_classes_by('input#registration_password', 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500') %>
+<% end %>
+<%# terms field %>
+<% if errors.to_h[:terms].try(:[], 0) %>
+  <%= turbo_stream.replace_all_classes_by('#terms_wrapper', 'flex items-start text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400') %>
+  <% if !focus %>
+    <%= turbo_stream.focus('#terms_wrapper input[type="checkbox"]') %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace_all_classes_by('#terms_wrapper', 'flex items-start') %>
+<% end %>
+<%= errors.to_h %>

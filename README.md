@@ -4,6 +4,7 @@
 
 Tested under Linux-based system.
 
+```shell
 ruby --version
 3.2.2
 
@@ -15,7 +16,7 @@ v20.9.0
 
 psql --version
 14.10
-
+```
 ## Build
 
 > chmod +x ./create.sh

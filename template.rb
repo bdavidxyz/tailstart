@@ -2,7 +2,8 @@
 say "💡 Building a fresh new Rails app for you ✨", :green
 
 def add_gems
-  gem 'authentication-zero'
+  append_to_file 'Gemfile', "\n# Simplest but complete authentication \ngem 'authentication-zero'\n"
+  append_to_file 'Gemfile', "\n# Clean validations \ngem 'dry-validation'\n"
 end
 
 
