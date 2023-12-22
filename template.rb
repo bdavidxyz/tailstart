@@ -36,6 +36,7 @@ after_bundle do
 
   directory "files/app", "app", force: true
   directory "files/db", "db", force: true
+  directory "files/test", "test", force: true
   copy_file "files/tailwind.config.js", "tailwind.config.js", force: true
 
   rails_command "db:seed"
