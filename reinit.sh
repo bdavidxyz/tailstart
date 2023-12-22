@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd authy 
+cd myapp 
 bin/rails db:drop
 cd ..
-rm -rf authy
+rm -rf myapp

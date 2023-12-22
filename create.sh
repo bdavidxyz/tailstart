@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir authy && cd authy 
+mkdir myapp && cd myapp 
 echo "source 'https://rubygems.org'" > Gemfile
 echo "gem 'rails', '~> 7.1.2'" >> Gemfile
 bundle install
