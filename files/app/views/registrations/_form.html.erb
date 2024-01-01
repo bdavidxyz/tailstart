@@ -7,27 +7,27 @@
 <div id="registration_form">
   <%= form_with(url: sign_up_path, scope: :registration, html: {novalidate: true, class: 'space-y-4 lg:space-y-6'} ) do |form| %>
     <div>
-      <%= form.label :email, 'Email' , class: errors[:email] ? error_label_classes : correct_label_classes
+      <%= form.label :email, 'Email' , class: errors_h[:email] ? error_label_classes : correct_label_classes
               %>
       <%= form.email_field :email, required: true, autofocus: true, autocomplete: "email" ,
                 placeholder: 'example@email.com' ,
-                class: errors[:email] ? error_input_classes : correct_input_classes
+                class: errors_h[:email] ? error_input_classes : correct_input_classes
                 %>
-      <% if errors[:email] %>
-        <p class="mt-1 text-sm text-red-600 dark:text-red-500"><span class="font-medium">⚠ Error - </span> <%= errors[:email][0] %></p>
+      <% if errors_h[:email] %>
+        <p class="mt-1 text-sm text-red-600 dark:text-red-500"><span class="font-medium">⚠ Error - </span> <%= errors_h[:email][0] %></p>
       <% end %>
     </div>
     <div>
-      <%= form.label :password, class: errors[:password] ? error_label_classes : correct_label_classes %>
+      <%= form.label :password, class: errors_h[:password] ? error_label_classes : correct_label_classes %>
       <%= form.password_field :password, required: true, autocomplete: "current-password" ,
                 placeholder: 'At least 12 characters' ,
-                class: errors[:password] ? error_input_classes : correct_input_classes
+                class: errors_h[:password] ? error_input_classes : correct_input_classes
                 %>
-      <% if errors[:password] %>
-        <p class="mt-1 text-sm text-red-600 dark:text-red-500"><span class="font-medium">⚠ Error - </span> <%= errors[:password][0] %></p>
+      <% if errors_h[:password] %>
+        <p class="mt-1 text-sm text-red-600 dark:text-red-500"><span class="font-medium">⚠ Error - </span> <%= errors_h[:password][0] %></p>
       <% end %>
     </div>
-    <div class="<%= errors[:terms] ? error_terms_classes : correct_terms_classes %>" id="terms_wrapper">
+    <div class="<%= errors_h[:terms] ? error_terms_classes : correct_terms_classes %>" id="terms_wrapper">
       <div class="flex items-center h-5">
         <%= form.check_box :terms, required: true,
                 class: "cursor-pointer w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
@@ -42,8 +42,8 @@
         <% end %>
       </div>
     </div>
-    <% if errors[:terms] %>
-      <p class="!mt-1 text-sm text-red-600 dark:text-red-500"><span class="font-medium">⚠ Error - </span> <%= errors[:terms][0] %></p>
+    <% if errors_h[:terms] %>
+      <p class="!mt-1 text-sm text-red-600 dark:text-red-500"><span class="font-medium">⚠ Error - </span> <%= errors_h[:terms][0] %></p>
     <% end %>
     <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
       Create an account

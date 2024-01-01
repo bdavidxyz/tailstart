@@ -2,5 +2,16 @@
 <% focus = nil %>
 <%= turbo_stream.log("log from turbo stream") %>
 <%= turbo_stream.replace "registration_form" do %>
-  <%= render partial: "form", locals: { errors: @errors.to_h } %>
+  <%= render partial: "form", locals: { errors_h: @errors_h } %>
+<% end %>
+<% if !focus && @errors_h[:email] %>
+  <%= turbo_stream.focus('input#registration_email') %>
+  <% focus = true %>
+<% end %>
+<% if !focus && @errors_h[:password] %>
+  <%= turbo_stream.focus('input#registration_password') %>
+  <% focus = true %>
+<% end %>
+<% if !focus && @errors_h[:terms] %>
+  <%= turbo_stream.focus('#terms_wrapper input[type="checkbox"]') %>
 <% end %>
