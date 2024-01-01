@@ -7,6 +7,7 @@
   <%= turbo_stream.replace_all_classes_by('input#registration_email', 'bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-red-100 dark:border-red-400') %>
   <% if !focus %>
     <%= turbo_stream.focus('input#registration_email') %>
+    <% focus = true %>
   <% end %>
 <% else %>
   <%= turbo_stream.replace_all_classes_by('label[for="registration_email"]', 'block mb-2 text-sm font-medium text-gray-900 dark:text-white') %>
@@ -18,6 +19,7 @@
   <%= turbo_stream.replace_all_classes_by('input#registration_password', 'bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-red-100 dark:border-red-400') %>
   <% if !focus %>
     <%= turbo_stream.focus('input#registration_password') %>
+    <% focus = true %>
   <% end %>
 <% else %>
   <%= turbo_stream.replace_all_classes_by('label[for="registration_password"]', 'block mb-2 text-sm font-medium text-gray-900 dark:text-white') %>
@@ -28,6 +30,7 @@
   <%= turbo_stream.replace_all_classes_by('#terms_wrapper', 'flex items-start text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400') %>
   <% if !focus %>
     <%= turbo_stream.focus('#terms_wrapper input[type="checkbox"]') %>
+    <% focus = true %>
   <% end %>
 <% else %>
   <%= turbo_stream.replace_all_classes_by('#terms_wrapper', 'flex items-start') %>

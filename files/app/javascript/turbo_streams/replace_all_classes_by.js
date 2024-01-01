@@ -5,6 +5,7 @@ StreamActions.replace_all_classes_by = function () {
   const new_classes = this.getAttribute("new_classes");
 
   let elt = document.querySelector(selector);
+  console.log('elt:', elt)
 
   elt.className = new_classes;
 };
