@@ -19,11 +19,11 @@ class NewUserContract < Dry::Validation::Contract
   end
 
   rule(:password) do
-    # test if a given string contains at least a lowercase letter, a uppercase, a digit, a special char and 8+ chars
+    # test if a given string contains at least a lowercase letter, a uppercase, a digit, a special char and 12+ chars
     strong_regex = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\W]).{12,}$/
     is_password_strong_enough = !!value[strong_regex]
     unless is_password_strong_enough
-      key.failure("password is not strong enough")
+      key.failure("password is not strong enough: at least a lowercase letter, a uppercase, a digit, a special char and 12+ chars")
     end
   end
 end

@@ -1,0 +1,56 @@
+<% correct_label_classes =  'block mb-2 text-sm font-medium text-gray-900 dark:text-white' %>
+<% error_label_classes =  'block mb-2 text-sm font-medium text-red-700 dark:text-red-500' %>
+<% correct_input_classes =  'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %>
+<% error_input_classes =  'bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-red-100 dark:border-red-400' %>
+<% correct_terms_classes =  'flex items-start' %>
+<% error_terms_classes =  'flex items-start text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400' %>
+<div id="registration_form">
+  <%= form_with(url: sign_up_path, scope: :registration, html: {novalidate: true, class: 'space-y-4 lg:space-y-6'} ) do |form| %>
+    <div>
+      <%= form.label :email, 'Email' , class: errors[:email] ? error_label_classes : correct_label_classes
+              %>
+      <%= form.email_field :email, required: true, autofocus: true, autocomplete: "email" ,
+                placeholder: 'example@email.com' ,
+                class: errors[:email] ? error_input_classes : correct_input_classes
+                %>
+      <% if errors[:email] %>
+        <p class="mt-1 text-sm text-red-600 dark:text-red-500"><span class="font-medium">⚠ Error - </span> <%= errors[:email][0] %></p>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :password, class: errors[:password] ? error_label_classes : correct_label_classes %>
+      <%= form.password_field :password, required: true, autocomplete: "current-password" ,
+                placeholder: 'At least 12 characters' ,
+                class: errors[:password] ? error_input_classes : correct_input_classes
+                %>
+      <% if errors[:password] %>
+        <p class="mt-1 text-sm text-red-600 dark:text-red-500"><span class="font-medium">⚠ Error - </span> <%= errors[:password][0] %></p>
+      <% end %>
+    </div>
+    <div class="<%= errors[:terms] ? error_terms_classes : correct_terms_classes %>" id="terms_wrapper">
+      <div class="flex items-center h-5">
+        <%= form.check_box :terms, required: true,
+                class: "cursor-pointer w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                %>
+      </div>
+      <div class="ml-3 text-sm">
+        <%= form.label :terms, class: "cursor-pointer text-gray-500 dark:text-gray-300" do %>
+          By signing up, you are creating a MyApp account, and you agree to MyApp’s
+          <a class="font-medium text-primary-600 dark:text-primary-500 hover:underline" href="#">Terms of Use</a>
+          and
+          <a class="font-medium text-primary-600 dark:text-primary-500 hover:underline" href="#">Privacy Policy</a>.
+        <% end %>
+      </div>
+    </div>
+    <% if errors[:terms] %>
+      <p class="!mt-1 text-sm text-red-600 dark:text-red-500"><span class="font-medium">⚠ Error - </span> <%= errors[:terms][0] %></p>
+    <% end %>
+    <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+      Create an account
+    </button>
+    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+      Already have an account?
+      <%= link_to "Sign in here" , sign_in_path, class: "font-medium text-primary-600 hover:underline dark:text-primary-500" %>
+    </p>
+  <% end %>
+</div>

@@ -20,9 +20,10 @@ class RegistrationsController < ApplicationController
         raise StandardError.new "An unknown error prevented User from being created."
       end
     else
-      flash[:alert] = "Error#{contract.errors.count > 1 ? "s" : ""}. Please correct registration form to continue."
+      @errors = contract.errors
+      flash[:alert] = "Error#{@errors.count > 1 ? "s" : ""}. Please correct registration form to continue."
       respond_to do |format|
-        format.turbo_stream { render locals: { errors: contract.errors } }
+        format.turbo_stream
       end
     end
   end
