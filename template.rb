@@ -41,8 +41,6 @@ after_bundle do
   directory "files/test", "test", force: true
   copy_file "files/tailwind.config.js", "tailwind.config.js", force: true
 
-  mount_letter_opener
-
   rails_command "db:seed"
 
   git :init
