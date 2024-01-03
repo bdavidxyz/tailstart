@@ -33,6 +33,7 @@ add_gems
 after_bundle do
   rails_command "db:create"
   generate "authentication"
+  run "yarn add flowbite"
   rails_command "db:migrate"
 
   directory "files/app", "app", force: true
