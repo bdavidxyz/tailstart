@@ -14,7 +14,7 @@
       <%= render "shared/flash" %>
     </div>
     <%= render "shared/navbar" %>
-    <main>
+    <main class="h-lvh <%= [sign_in_path, sign_up_path].include?(request.path) ? 'bg-gray-50 dark:bg-gray-900' : ''%>">
       <%= yield %>
     </main>
   </body>
