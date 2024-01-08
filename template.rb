@@ -5,6 +5,7 @@ def add_gems
   append_to_file 'Gemfile', "\n# Simplest but complete authentication \ngem 'authentication-zero'\n"
   append_to_file 'Gemfile', "\n# Clean validations \ngem 'dry-validation'\n"
   append_to_file 'Gemfile', "\n# Easy way to stub and test outcoming e-mails \ngem 'letter_opener_web', '~> 2.0', group: [:development]\n"
+  append_to_file 'Gemfile', "\n# Better test output \ngem 'minitest-reporters', '~> 2.0', group: [:test]\n"
 end
 
 
