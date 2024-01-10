@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     root "profile#show"
   end
   
-
+  get "pricing", to: "pricing#index"
   root "home#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
