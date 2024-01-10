@@ -6,8 +6,8 @@ class PasswordsTest < ApplicationSystemTestCase
   end
 
   test "updating the password" do
-    visit edit_password_url
-
+    visit edit_account_password_path
+    
     fill_in "Password challenge", with: "Secret1*3*5*"
     fill_in "New password", with: "Secret6*4*2*"
     fill_in "Confirm new password", with: "Secret6*4*2*"
