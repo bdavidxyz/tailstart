@@ -6,7 +6,7 @@ class Identity::EmailsTest < ApplicationSystemTestCase
   end
 
   test "updating the email" do
-    visit edit_identity_email_url
+    visit edit_account_email_url
 
     fill_in "New email", with: "new_email@hey.com"
     fill_in "Password challenge", with: "Secret1*3*5*"
@@ -18,7 +18,7 @@ class Identity::EmailsTest < ApplicationSystemTestCase
   test "sending a verification email" do
     @user.update! verified: false
 
-    visit edit_identity_email_url
+    visit edit_account_email_url
 
     click_on "Re-send verification email"
 
