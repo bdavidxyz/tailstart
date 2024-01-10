@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get  "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
   
+  resources :profiles, only: [:index]
   resources :sessions, only: [:index, :show, :destroy]
   resource  :password, only: [:edit, :update]
   namespace :identity do
@@ -14,6 +15,15 @@ Rails.application.routes.draw do
     resource :email_verification, only: [:show, :create]
     resource :password_reset,     only: [:new, :edit, :create, :update]
   end
+
+  namespace :account do
+    resource :profile, only: [:show]
+    resource :email, only: [:edit, :update]
+    resource :password, only: [:edit, :update]
+    root "profile#show"
+  end
+  
+
   root "home#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
