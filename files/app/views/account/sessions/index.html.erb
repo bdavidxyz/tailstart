@@ -1,0 +1,38 @@
+<%= render "shared/account_navbar" %>
+<div class="max-w-screen-xl mx-auto py-2">
+  <h2 class="mb-4 px-2 text-xl font-bold text-gray-900 dark:text-white">Devices & Sessions</h2>
+  <div class="block max-w-screen-xl mx-2 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <% if notice %>
+      <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+        <span class="font-medium">Success !</span> <%= notice %>
+      </div>
+    <% end %>
+    <div id="sessions">
+      <% @sessions.each do |session| %>
+        <div class="mb-6">
+          <div id="<%= dom_id session %>">
+            <p>
+              <strong>User Agent:</strong>
+              <%= session.user_agent %>
+            </p>
+            <p>
+              <strong>Ip Address:</strong>
+              <%= session.ip_address %>
+            </p>
+            <p>
+              <strong>Created at:</strong>
+              <%= session.created_at %>
+            </p>
+          </div>
+          <p>
+            <%= button_to "Log out", account_session_path(session.id), method: :delete, class: "px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+    <br/>
+    <div>
+      <%= link_to "← Home", root_path, class: "flex items-center mr-8 text-gray-500 transition-colors duration-200 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" %>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   resources :profiles, only: [:index]
   resources :sessions, only: [:index, :show, :destroy]
-  resource  :password, onlyx: [:edit, :update]
+  resource  :password, only: [:edit, :update]
   namespace :identity do
     resource :email,              only: [:edit, :update]
     resource :email_verification, only: [:show, :create]
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resource :profile, only: [:show]
     resource :email, only: [:edit, :update]
     resource :password, only: [:edit, :update]
+    resources :sessions, only: [:index, :show, :destroy]
+
     root "profile#show"
   end
   
