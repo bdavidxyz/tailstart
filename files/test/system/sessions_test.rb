@@ -8,7 +8,7 @@ class SessionsTest < ApplicationSystemTestCase
   test "visiting the index" do
     sign_in_as @user
 
-    visit sessions_url
+    visit account_sessions_url
     assert_selector "h1", text: "Sessions"
   end
 

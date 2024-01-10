@@ -24,3 +24,9 @@ psql --version
 ## Drop all
 
 > chmod +x ./create.sh
+
+## Quick hacks (so far)
+
+Forced Rails version to 7.1.2
+Forced turbo-rails to 7.3.0
+Forced to answer "Y" to file overwritting

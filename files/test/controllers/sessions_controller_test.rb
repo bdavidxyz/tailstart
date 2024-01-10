@@ -8,7 +8,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     sign_in_as @user
 
-    get sessions_url
+    get account_sessions_url
     assert_response :success
   end
 
@@ -34,8 +34,8 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should sign out" do
     sign_in_as @user
 
-    delete session_url(@user.sessions.last)
-    assert_redirected_to sessions_url
+    delete account_session_url(@user.sessions.last)
+    assert_redirected_to account_sessions_url
 
     follow_redirect!
     assert_redirected_to sign_in_url

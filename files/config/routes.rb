@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   post "sign_up", to: "registrations#create"
   
   resources :profiles, only: [:index]
-  resources :sessions, only: [:index, :show, :destroy]
   resource  :password, only: [:edit, :update]
   namespace :identity do
     resource :email,              only: [:edit, :update]
@@ -20,7 +19,7 @@ Rails.application.routes.draw do
     resource :profile, only: [:show]
     resource :email, only: [:edit, :update]
     resource :password, only: [:edit, :update]
-    resources :sessions, only: [:index, :show, :destroy]
+    resources :sessions, only: [:index, :destroy]
 
     root "profile#show"
   end
