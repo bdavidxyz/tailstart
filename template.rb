@@ -34,6 +34,7 @@ add_gems
 after_bundle do
   rails_command "db:create"
   generate "authentication"
+  run "yarn upgrade @hotwired/turbo-rails@7.3.0"
   run "yarn add flowbite"
   rails_command "db:migrate"
 
