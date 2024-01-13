@@ -54,6 +54,11 @@ after_bundle do
 
   rails_command "db:seed"
 
+  # Anonymize default user
+  run "find . -type f -exec sed -i 's/lazaro_nixon/jane_doe/g' {} +"
+  run "find . -type f -exec sed -i 's/lazaronixon/janedoe/g' {} +"
+
+
   git :init
   git add: "."
   git commit: %Q{ -m 'Initial commit' }
