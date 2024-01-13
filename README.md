@@ -6,7 +6,7 @@ Tested under Linux-based system.
 
 ```shell
 ruby --version
-3.2.2
+3.3.0
 
 git --version
 2.34.1
@@ -30,3 +30,4 @@ psql --version
 Forced Rails version to 7.1.2
 Forced turbo-rails to 7.3.0
 Forced to answer "Y" to file overwritting
+Need to run "bundle update" to ensure bcrypt is installed
