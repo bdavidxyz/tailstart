@@ -67,9 +67,14 @@ bin/dev
 
 Then open your browser at localhost:3000
 
-There is already a user here by default : simple@user.com / Secret1*3*5*
+There is already a verified user in the database :
 
-Or you can sign up and open localhost:3000/letter_opener to confirm your email.
+```yml
+email: simple@user.com
+password: Secret1*3*5*
+```
+
+Or you can sign up a new user, then open localhost:3000/letter_opener to confirm your email.
 
 ## Test
 
