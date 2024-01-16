@@ -68,7 +68,7 @@ chmod +x ./reinit.sh
 ./create.sh
 ```
 
-## Quick hacks (so far)
+## Quick hacks (so far - nothing to do on your side)
 
 - Forced Rails version to 7.1.2 (in order to be sure what we're working on)
 - Forced turbo-rails to 7.3.0 (or it will use a beta version of Turbo 8 that is not yet stable)
