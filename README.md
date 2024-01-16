@@ -57,14 +57,31 @@ psql --version
 ## Build
 
 ```shell
-chmod +x ./create.sh
 ./create.sh
+# Wait for a minute... then :
+cd myapp
+bin/dev
+```
+
+## Play
+
+Then open your browser at localhost:3000
+
+There is already a user here by default : simple@user.com / Secret1*3*5*
+
+Or you can sign up and open localhost:3000/letter_opener to confirm your email.
+
+## Test
+
+You can run the full test suite by running :
+
+```shell
+bin/rails test:all
 ```
 
 ## Drop all and restart from fresh state
 
 ```shell
-chmod +x ./reinit.sh
 ./create.sh
 ```
 
