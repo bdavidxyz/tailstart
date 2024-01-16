@@ -2,25 +2,36 @@
 
 ## Motivation
 
-- Ruby-on-Rails is fantastic to deliver features
-- Flowbite is fanastic to deliver extensible UI design (based on Tailwind)
+- Ruby-on-Rails is fantastic to deliver features - for free
+- Flowbite is fanastic to deliver extensible Tailwind UI design - with a generous free tier.
 
 Instead of having Rails with fantastic features (but without UI design),
 
-and Flowbite with fantastic UI design (but without anything that _actually_ works),
+and Flowbite with fantastic UI design (but without anything that _actually_ works behind the scene),
 
 What if we marry both?
 
-* We have default login/logout flow that is beautiful by default
+* We have a working authentication flow that is beautiful by default
+* We have transactional emails that _already works_
 * We have beautiful flash messages by default
+* We have already designed, accessible form validation
 * We have secured, verified users
 * We have a full test suite by default
 * We have beautiful landing pages by default
 * We have beautiful static pages (pricing, privacy, etc) by default
 * We have tons of CSS components, blocks and pages ready to be integrated with our own custom feature
 
-It's a UI design centric starter kit.
+Then we have a Rails, but UI design centric starter kit.
 
+## Isn't Flowbite a 3rd-party dependency?
+
+Actually Flowbite is just plain old Tailwind, so you're not really "locked" into an external dependency.
+
+Of course if you buy their full package, you have access to more components than their free tier, which sounds fair!
+
+I have **no affiliation** with them (so far), moreover, Flowbite decided to **offer paying components** that ends up in this starter kit - currently some of them. But I won't abuse of their generosity in this repo, so don't expect integration of top-notch components to appear in the roadmap.
+
+So a big thanks to their team !
 
 ## Prerequisites
 
@@ -39,6 +50,7 @@ v20.9.0
 psql --version
 14.10
 ```
+
 ## Build
 
 > chmod +x ./create.sh
