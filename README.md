@@ -30,7 +30,7 @@ Then we have a Rails, but UI design centric starter kit.
 
 Actually Flowbite is just plain old Tailwind, so you're not really "locked" into an external dependency.
 
-Of course if you buy their full package, you have access to more components than their free tier, which sounds fair!
+You can use just the free parts. Of course if you buy their full package, you have access to more components, which sounds fair!
 
 I have **no affiliation** with them (so far), moreover, Flowbite decided to **offer paying components** that ends up in this starter kit - currently only a few of them. But I won't abuse of their generosity here, so this repo will rely on free components as much as possible.
 
