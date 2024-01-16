@@ -3,7 +3,6 @@
 
 # Tailwind and Ruby-on-Rails starter kit
 
-
 ## Motivation
 
 - Ruby-on-Rails is fantastic to deliver features - for free
@@ -33,7 +32,7 @@ Actually Flowbite is just plain old Tailwind, so you're not really "locked" into
 
 Of course if you buy their full package, you have access to more components than their free tier, which sounds fair!
 
-I have **no affiliation** with them (so far), moreover, Flowbite decided to **offer paying components** that ends up in this starter kit - currently only a few of them. But I won't abuse of their generosity in this repo, so don't expect integration of components to appear in the roadmap.
+I have **no affiliation** with them (so far), moreover, Flowbite decided to **offer paying components** that ends up in this starter kit - currently only a few of them. But I won't abuse of their generosity here, so this repo will rely on free components as much as possible.
 
 So a big thanks to their team !
 
