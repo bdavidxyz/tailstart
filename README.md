@@ -94,7 +94,7 @@ bin/rails test:all
 
 ## Quick hacks (so far - nothing to do on your side)
 
-- Forced Rails version to 7.1.2 (in order to be sure what we're working on)
+- Forced Rails version to 7.1.3 (in order to be sure what we're working on)
 - Forced turbo-rails to 7.3.0 (or it will use a beta version of Turbo 8 that is not yet stable)
 - Forced to answer "Y" to file overwritting, see https://github.com/rails/cssbundling-rails/issues/146
 - Need to run "bundle update" to ensure bcrypt is installed

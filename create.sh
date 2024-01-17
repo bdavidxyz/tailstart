@@ -2,7 +2,7 @@
 
 mkdir myapp && cd myapp 
 echo "source 'https://rubygems.org'" > Gemfile
-echo "gem 'rails', '7.1.2'" >> Gemfile
+echo "gem 'rails', '7.1.3'" >> Gemfile
 bundle install
 
 # https://github.com/rails/cssbundling-rails/issues/146 
