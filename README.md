@@ -1,9 +1,10 @@
+# Tailwind and Ruby-on-Rails starter kit
+
+## Demo
+
 <p align="center">
   <img width="600" height="400" src="https://github.com/bdavidxyz/flow/assets/2937888/7c486cb1-c5a4-46fb-8ee6-0f1ab033fbdb">
 </p>
-
-
-# Tailwind and Ruby-on-Rails starter kit
 
 ## Motivation
 
